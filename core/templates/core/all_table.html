@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div>
+
+    <table class="table table-bordered ">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Date of publish</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for text in texts %}
+                <tr>
+                    <td></td>
+                    <td>{{ text }}</td>
+                    <td>{{ text.date }}</td>
+                    <td><a href="{% url 'table' text.id %}" class="active"><button type="button" class="btn btn-light">see more</button></a></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+    </div>
+
+{% endblock %}
